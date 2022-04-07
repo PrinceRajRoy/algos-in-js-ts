@@ -10,6 +10,10 @@ export namespace Utils {
   ]
     ? Length<V>
     : never;
+  export type Add<N extends number, P extends number> = Extract<
+    Length<[...Tuple<N>, ...Tuple<P>]>,
+    number
+  >;
   export type Num<N> = Extract<N, number>;
   export type Compare<N extends number, P extends number> = P extends N
     ? false

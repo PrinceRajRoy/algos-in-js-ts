@@ -8,9 +8,9 @@ type BubbleSort<
   : T extends [infer U, infer V, ...infer Rest]
   ? BubbleSort<
       Utils.Compare<Utils.Num<U>, Utils.Num<V>> extends true
-        ? [V, ...BubbleSort<[U, ...Rest], Utils.Subtract<Current, 1>>]
-        : [U, ...BubbleSort<[V, ...Rest], Utils.Subtract<Current, 1>>],
-      Utils.Subtract<Current, 1>
+        ? [V, ...BubbleSort<[U, ...Rest], Utils.Add<Current, 1>>]
+        : [U, ...BubbleSort<[V, ...Rest], Utils.Add<Current, 1>>],
+      Utils.Add<Current, 1>
     >
   : [];
 
